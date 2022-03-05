@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>事件指派方式</title>
+  </head>
+  <body>
+
+    <button onclick="showMsg('hello')">传统指派1</button>
+    <button id="btn2">传统指派2</button>
+    <button id="btn3">取消传统指派</button>
+
+    <button id="btn4">现代指派</button>
+    <button id="btn5">取消现代指派</button>
+
+    <script>
+      // 事件传统指派方式1
+      function showMsg(str) {
+        console.log(str)
+      }
+      // 事件传统指派方式2
+      let btn2 = document.querySelector('#btn2')
+      btn2.onclick = function () {
+        showMsg('world')
+      }
+      // 取消传统指派
+      let btn3 = document.querySelector('#btn3')
+      btn3.onclick = function () {
+        btn2.onclick = null
+      }
+
+      // 现代指派
+      let btn4 = document.querySelector('#btn4')
+      btn4.addEventListener('click', function () {
+        showMsg('现代指派')
+      })
+
+      // 现代指派的取消
+      let btn5 = document.querySelector('#btn5')
+      btn5.addEventListener('click', showMsg)
+      btn5.removeEventListener('click', showMsg)
+
+    </script>
+
+  </body>
+</html>

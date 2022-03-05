@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+    <style>
+      div {
+        width: 100px;
+        height: 200px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div></div>
+
+    <script>
+      // 当事件发生，就会产生一个事件对象，记录跟这次事件相关的信息
+      let div = document.querySelector('div')
+      div.addEventListener('click', function (event) {
+        console.log(event)
+      })
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>事件捕获</title>
+  </head>
+  <body>
+
+    <div>
+      <button>事件捕获</button>
+    </div>
+
+    <script>
+      let button = document.querySelector('button')
+      let myDiv = document.querySelector('div')
+
+      // 关键的参数是 true； true是设置事件捕获
+      button.addEventListener('click', showMsg1, true)
+      myDiv.addEventListener('click', showMsg2, true)
+      document.body.addEventListener('click', showMsg3, true)
+
+      function showMsg1() {
+        alert('点击到button')
+      }
+      function showMsg2() {
+        alert('点击到了div')
+      }
+      function showMsg3() {
+        alert('点击到了body')
+      }
+
+
+    </script>
+
+  </body>
+</html>
