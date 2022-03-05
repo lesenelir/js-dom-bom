@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>InnerHTML</title>
+  </head>
+  <body>
+
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">首页</a>
+          </li>
+          <li>
+            <a href="#">产品</a>
+          </li>
+          <li>
+            <a href="#">关于</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <button onclick="getInnerHtml()">获取/设置innerHTML</button>
+    <button onclick="getInnerText()">获取/设置innerText</button>
+    <button onclick="getOuterHtml()">获取/设置outerHTML</button>
+
+
+    <script>
+      let header = document.querySelector('header')
+      console.log(header)
+
+      function getInnerHtml() {
+        console.log(header)
+        header.innerHTML += "<h1>重新设置内容</h1>"
+        console.log(header.innerHTML)
+      }
+
+      function getInnerText() {
+        header.innerText = 'lesenelir'
+        console.log(header.innerText)
+      }
+
+      function getOuterHtml() {
+        console.log(header.outerHTML)
+        header.outerHTML = '' // 删除自己的节点
+        console.log(header)
+      }
+    </script>
+
+  </body>
+</html>

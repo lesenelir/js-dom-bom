@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>属性节点</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+      }
+      .orange {
+        background-color: orange;
+      }
+      .green {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="myId" class="myClass orange" title="myTitle"></div>
+    <button>获取属性</button>
+
+    <script>
+      let btn =document.querySelector('button')
+      btn.addEventListener('click', function () {
+        // 获取属性节点
+        let myDiv = document.getElementById("myId")
+        // console.log(myDiv)
+        let attr = myDiv.getAttribute('class')
+        console.log(attr)
+        // 设置属性节点
+        myDiv.setAttribute("class", "myClass green")
+      })
+
+
+    </script>
+
+
+
+  </body>
+</html>

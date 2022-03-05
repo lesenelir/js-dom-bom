@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>节点操作</title>
+  </head>
+  <body>
+    <div id="myId">
+      <h1>div的第一个子节点</h1>
+      <p id="replace">要替换的内容</p>
+      <div id="myClone"></div>
+    </div>
+    <button>添加节点</button>
+
+    <button onclick="myReplace()">替换内容</button>
+    <button onclick="myInsertBefore()">插入节点</button>
+    <button onclick="myCloneNode()">复制节点</button>
+
+    <script>
+      let btns = document.querySelectorAll('button')
+      let myDiv = document.getElementById('myId')
+      let replace = document.getElementById("replace")
+
+      // 添加节点
+      btns[0].addEventListener('click', function () {
+        console.log(myDiv) // undefined
+        // 新创建一个元素节点 createElement
+        let myNewH = document.createElement('h2') // <h2></h2>
+        console.log(myNewH)
+        // 新创建一个文本节点
+        let textNode = document.createTextNode('dont cry')
+        // 新创建的元素节点放入新创建的文本节点
+        myNewH.appendChild(textNode)
+        console.log(myNewH)
+        myDiv.appendChild(myNewH)
+      })
+
+      // 替换节点
+      function myReplace() {
+        let newP = document.createElement("p")
+        let textNode = document.createTextNode("替换的新内容")
+        newP.appendChild(textNode)
+        console.log(newP)
+        myDiv.replaceChild(newP, replace)
+      }
+
+      // 插入节点
+      function myInsertBefore() {
+        let newDiv = document.createElement("div")
+        let textNode = document.createTextNode("插入的内容")
+        newDiv.appendChild(textNode)
+        console.log(newDiv)
+
+        myDiv.insertBefore(newDiv, replace)
+      }
+
+      // 复制节点
+      function myCloneNode() {
+        // 复制
+        let myNewCloneNode = myDiv.cloneNode(true)
+        // 复制完要利用
+        let cloneDiv = document.getElementById("myClone")
+        cloneDiv.appendChild(myNewCloneNode)
+      }
+
+    </script>
+
+  </body>
+</html>

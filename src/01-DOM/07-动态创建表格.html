@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>动态创建表格实例</title>
+    <style>
+      table {
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <table></table>
+    <button onclick="createTable(6, 3)">点击生成表格</button>
+
+    <script>
+      let myTable = document.getElementsByTagName("table")[0]
+
+      function createTable(row, col) {
+        console.log(myTable)
+        for (let i = 0; i < row; i++) {
+          let tr = document.createElement("tr")
+          for (let j = 0; j < col; j++) {
+            let td = document.createElement("td")
+            td.innerText = `第${i}行,第${j}列`
+            tr.appendChild(td)
+          }
+          myTable.appendChild(tr)
+        }
+      }
+    </script>
+
+  </body>
+</html>

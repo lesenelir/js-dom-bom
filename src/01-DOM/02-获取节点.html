@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- 头部 -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="http://www.google.com">谷歌</a></li>
+          <li class="green"></li>
+        </ul>
+      </nav>
+      <div id="divId"></div>
+    </header>
+
+    <!-- 内容区 -->
+    <section>
+      <form action="">
+        <label>
+          <input type="text" name="username">
+        </label>
+      </form>
+    </section>
+    <footer></footer>
+
+    <script>
+      // 查询所有子节点
+      let myChildNodes = document.body.childNodes // 找body的直接子元素，不找内嵌元素
+      console.log(myChildNodes)
+      for (let i = 0; i < myChildNodes.length; i++) {
+        console.log("第" + i + "个节点名称:  " + myChildNodes[i].nodeName)
+        console.log("第" + i + "个节点类型:  " + myChildNodes[i].nodeType)
+        console.log("第" + i + "个节点值:  " + myChildNodes[i].nodeValue)
+      }
+
+      // 获取单个节点
+      console.log(myChildNodes[3].childNodes[1])
+      // nextSibling 获取下一个兄弟节点 （有可能获取文本节点）
+      // previousSibling 获取上一个兄弟节点
+
+      let myDiv = document.querySelector('#divId')
+      console.log(myDiv)
+
+      // 通过name属性获取标签
+      let byName = document.getElementsByName('username')
+      console.log(byName)
+      console.log(byName[0])
+
+
+      // Note: 获取指定节点方式：通过ID、通过class、通过元素名、通过name属性
+    </script>
+
+  </body>
+</html>

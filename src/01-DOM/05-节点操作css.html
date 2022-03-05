@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>节点操作css</title>
+    <style>
+      .myClass {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="changeColor()">改变div颜色</button>
+    <button onclick="getColor()">获取div颜色</button>
+    <div id="myDiv" class="myClass"></div>
+
+    <script>
+      let myDiv = document.getElementById("myDiv")
+
+      function changeColor() {
+        // 此处设置是内联样式， 覆盖掉了class中的样式
+        myDiv.style.backgroundColor = "red"
+        myDiv.style.width = "100px"
+        myDiv.style.height = "100px"
+      }
+
+      function getColor() {
+        // js获取的也是内联样式，打印不出class中的样式
+        console.log(myDiv.style.backgroundColor)
+      }
+
+    </script>
+
+  </body>
+</html>
