@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>window对象</title>
+  </head>
+  <body>
+
+    <button onclick="myLocation()">location对象</button>
+    <button onclick="myHistory()">History对象</button>
+
+    <script>
+      // window对象
+      console.log(window)
+
+      // screen对象
+      console.log(screen.width, screen.height)
+
+      // document对象
+      console.log(document.documentElement.clientWidth, document.documentElement.clientHeight)
+
+      // location对象
+      function myLocation() {
+        location.href = 'http://www.baidu.com' // 充当a标签
+      }
+
+      // history对象
+      function myHistory() {
+        history.forward() // 前进一页
+      }
+
+      // navigator对象
+      console.log(navigator)
+
+
+    </script>
+
+  </body>
+</html>
